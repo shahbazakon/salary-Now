@@ -13,9 +13,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final String selfieUploadUrl = "https://salarynow.in/testapi/imageapi.php";
-  final String pdfUploadUrl = "https://salarynow.in/testapi/pdfapi.php";
-
   File? _imageFile;
   File? _pdfFile;
 
