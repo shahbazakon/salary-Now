@@ -1,8 +1,5 @@
-import 'dart:convert';
-import 'dart:developer';
 import 'dart:io';
 
-import 'package:dio/dio.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -32,28 +29,6 @@ class _HomeScreenState extends State<HomeScreen> {
       _imageFile = File(image.path);
     });
 
-    // Encode image to base64
-    String base64Image = base64Encode(_imageFile!.readAsBytesSync());
-
-    // Make HTTP POST request using Dio
-    try {
-      Dio dio = Dio();
-      Response response = await dio.post(
-        selfieUploadUrl,
-        data: {'photo': base64Image},
-      );
-
-      if (response.statusCode == 200) {
-        print(response.data);
-        // Handle success
-      } else {
-        // Handle error
-        print("Error uploading selfie: ${response.statusCode}");
-      }
-    } catch (e) {
-      print("Error uploading selfie: $e");
-    }
-
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -70,35 +45,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
     if (result != null) {
       _pdfFile = File(result.files.single.path!);
-
-      // Make HTTP POST request using Dio
-      try {
-        Dio dio = Dio();
-        Response response = await dio.post(
-          pdfUploadUrl,
-          data: {'file': base64Encode(_pdfFile!.readAsBytesSync())},
-        );
-
-        if (response.statusCode == 200) {
-          log(response.data);
-          // Handle success
-        } else {
-          // Handle error
-          log("Error uploading PDF: ${response.statusCode}");
-        }
-      } catch (e) {
-        log("Error uploading PDF: $e");
-      }
-    } else {
-      // User canceled the file picking
-      log("User canceled the file picking");
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => PreviewScreen(pdfFile: _pdfFile),
+        ),
+      );
     }
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => PreviewScreen(pdfFile: _pdfFile),
-      ),
-    );
   }
 
   @override
