@@ -1,16 +1,37 @@
-# salarynow
+# Salary Now
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Task Description
 
-A few resources to get you started if this is your first Flutter project:
+1) Make a button for the camera open then take selfie and push the image to API in base64 format
+		
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://salarynow.in/testapi/imageapi.php
+Key: photo (base64 encode)
+Method: POST
+
+Response:
+{"success":"true","msg":"Selfie images Updated"}
+
+
+ 
+2) Make a button to choose file for only PDF  and upload a file without read_external_storage permission  
+		
+https://salarynow.in/testapi/pdfapi.php
+Key:- file
+Method:- POST
+
+Response:- {
+    "status": "success",
+    "message": "File uploaded successfully"
+}
+
+## Task Description responce 
+
+| Application Preview |
+|-------------------- |
+| ![GIF-231111_004553](https://github.com/shahbazakon/salary-Now/assets/57652434/6b8b2b9a-3076-486b-ab4a-4ea76347f376) | 
+
+
