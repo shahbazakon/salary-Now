@@ -1,6 +1,12 @@
 # Salary Now
 
 
+## Task Description responce 
+
+| Application Preview |
+|-------------------- |
+| ![GIF-231111_004553](https://github.com/shahbazakon/salary-Now/assets/57652434/6b8b2b9a-3076-486b-ab4a-4ea76347f376) | 
+
 
 ## Task Description
 
@@ -28,10 +34,6 @@ Response:- {
     "message": "File uploaded successfully"
 }
 
-## Task Description responce 
 
-| Application Preview |
-|-------------------- |
-| ![GIF-231111_004553](https://github.com/shahbazakon/salary-Now/assets/57652434/6b8b2b9a-3076-486b-ab4a-4ea76347f376) | 
 
 
